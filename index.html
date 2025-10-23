@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Backgammon PWA</title>
+
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.svg" sizes="192x192" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Backgammon" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Backgammon</h1>
+    <div class="actions">
+      <button id="installBtn" hidden>Installer</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="board-panel">
+      <div id="board" class="board" aria-label="Plateau de backgammon"></div>
+      <div class="labels">
+        <div>Haut: points 13 → 24</div>
+        <div>Bas: points 1 → 12</div>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="status">
+        <div>Joueur courant: <span id="currentPlayer">Blanc</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="rollBtn">Lancer les dés</button>
+        <div class="dice" aria-live="polite">
+          <div class="die" id="die1" title="Dé 1">-</div>
+          <div class="die" id="die2" title="Dé 2">-</div>
+        </div>
+        <button id="switchBtn">Changer de joueur</button>
+        <button id="resetBtn" class="secondary">Réinitialiser</button>
+      </div>
+
+      <div class="legend">
+        <div><span class="checker sample W"></span> Blanc</div>
+        <div><span class="checker sample B"></span> Noir</div>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </aside>
+  </main>
+
+  <noscript>Veuillez activer JavaScript pour utiliser l’application.</noscript>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
+
